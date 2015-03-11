@@ -56,7 +56,8 @@ public class AudioTagService {
 	private Set<String> ALLOWED_EXTENSIONS = new HashSet<>();
 
 	private static final Pattern GENRE_PATTERN = compile("\\((\\d+)\\).*");
-    private static final Pattern TRACK_NUMBER_PATTERN = compile("(\\d+)/\\d+");
+		private static final Pattern TRACK_NUMBER_PATTERN = compile("(\\d+)/\\d+");
+		private static final Pattern TRACK_FILE_NUMBER_PATTERN = compile("^(\\d+).*");
 
 	public static final String UNKNOWN_ALBUM = "[Unknown album]";
 	
@@ -98,6 +99,10 @@ public class AudioTagService {
 				metaData.setTrackNr(toFirstNumber(getTagField(tag, TRACK)));
 				metaData.setTrackNrs(toShort(getTagField(tag, TRACK_TOTAL)));
 				metaData.setCoverArtEmbedded(tag.getFirstArtwork() != null);
+				
+				if (null == metaData.getTrackNr()) {
+					metaData.setTrackNr(toPrefixNumber(file.getFilename()));
+				}
 			}
 
 			AudioHeader audioHeader = audioFile.getAudioHeader();
@@ -193,6 +198,14 @@ public class AudioTagService {
 		}
 		return null;
 	}
+		
+		private Short toPrefixNumber(String filename) {
+			Matcher matcher = TRACK_FILE_NUMBER_PATTERN.matcher(filename);
+			if (matcher.matches()) {
+				return NumberUtils.toShort(matcher.group(1));
+			}
+			return null;
+		}
 	
 	private Short toShort(String tag) {
 		tag = StringUtils.trimToEmpty(tag);
