@@ -12,7 +12,7 @@ public class AlbumInfoHandlerTest {
 	private static final String ERRONEUOS_URL = 
 			"http://images.amazon.com/images/P/B00042YBXG.01.MZZZZZZZ.jpg";
 	private static final String CORRECT_URL = 
-			"http://userserve-ak.last.fm/serve/34s/72903330.png";
+			"http://img2-ak.lst.fm/i/u/64s/0ba57b4d2e03435793fa00d050bbd40d.png";
 
 	@Test
 	public void nullUrlReturnsNull() {

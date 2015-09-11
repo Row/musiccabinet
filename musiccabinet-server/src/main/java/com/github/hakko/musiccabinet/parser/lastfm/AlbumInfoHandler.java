@@ -31,7 +31,7 @@ public class AlbumInfoHandler extends DefaultHandler {
 	private static final String ATTR_LARGE = "large";
 	private static final String ATTR_EXTRA_LARGE = "extralarge";
 
-	private static final String IMAGE_HOST = "last.fm";
+	private static final String IMAGE_HOST = "lst.fm";
 	
 	@Override
 	public void startElement(String uri, String localName, String qName, Attributes attributes) 

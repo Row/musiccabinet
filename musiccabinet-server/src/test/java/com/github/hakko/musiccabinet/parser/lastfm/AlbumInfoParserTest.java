@@ -17,16 +17,16 @@ public class AlbumInfoParserTest {
 	// constant values below are copied from file above
 	
 	private static final String SMALL_IMAGE_URL = 
-			"http://userserve-ak.last.fm/serve/34s/63911473.png";
+			"http://img2-ak.lst.fm/i/u/34s/fb27b5245fb7444ac4fd8cad6f0374e4.png";
 	private static final String MEDIUM_IMAGE_URL = 
-			"http://userserve-ak.last.fm/serve/64s/63911473.png";
+			"http://img2-ak.lst.fm/i/u/64s/fb27b5245fb7444ac4fd8cad6f0374e4.png";
 	private static final String LARGE_IMAGE_URL = 
-			"http://userserve-ak.last.fm/serve/174s/63911473.png";
+			"http://img2-ak.lst.fm/i/u/174s/fb27b5245fb7444ac4fd8cad6f0374e4.png";
 	private static final String EXTRA_LARGE_IMAGE_URL =
-			"http://userserve-ak.last.fm/serve/300x300/63911473.png";
+			"http://img2-ak.lst.fm/i/u/300x300/fb27b5245fb7444ac4fd8cad6f0374e4.png";
 	
-	private static final int LISTENERS = 1869409;
-	private static final int PLAY_COUNT = 29066127;
+	private static final int LISTENERS = 2307405;
+	private static final int PLAY_COUNT = 39693185;
 	
 	@Test
 	public void resourceFileCorrectlyParsed() throws ApplicationException {
