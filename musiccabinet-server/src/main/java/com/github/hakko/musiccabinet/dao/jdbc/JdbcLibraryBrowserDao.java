@@ -703,7 +703,7 @@ public class JdbcLibraryBrowserDao implements LibraryBrowserDao, JdbcTemplateDao
 		String sql = "select lt.id from library.file f"
 		+ " inner join library.directory d on f.directory_id = d.id"
 		+ " inner join library.track lt on lt.file_id = f.id"
-		+ " where d.path = ? and f.filename = ?";
+		+ " where d.path = ? and f.filename = ? LIMIT 1";
 
 		return jdbcTemplate.queryForInt(sql, directory, filename);
 	}
@@ -715,7 +715,7 @@ public class JdbcLibraryBrowserDao implements LibraryBrowserDao, JdbcTemplateDao
 		String sql = "select lt.id from library.file f"
 		+ " inner join library.directory d on f.directory_id = d.id"
 		+ " inner join library.track lt on lt.file_id = f.id"
-		+ " where lower(d.path) = ? and lower(f.filename) = ?";
+		+ " where lower(d.path) = ? and lower(f.filename) = ? LIMIT 1";
 
 		String directory = FilenameUtils.getFullPathNoEndSeparator(absolutePath.toLowerCase());
 		String filename = FilenameUtils.getName(absolutePath.toLowerCase());
