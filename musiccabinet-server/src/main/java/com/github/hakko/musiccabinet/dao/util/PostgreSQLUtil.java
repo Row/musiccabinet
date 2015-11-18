@@ -27,9 +27,6 @@ public class PostgreSQLUtil {
 	 * If a previous version with the same name exists, it is dropped by a call to
 	 * function drop_procedure (creation of this function is part of database set-up).
 	 * 
-	 * @param rc			RequestContext for call
-	 * @param functionName	Name of function
-	 * @param functionBody	Body of function
 	 * @throws ApplicationException On failure
 	 */
 	public static void loadFunction(JdbcTemplateDao dao, PostgreSQLFunction dbFunction) throws ApplicationException {
