@@ -71,13 +71,10 @@ public class AlbumInfoHandler extends DefaultHandler {
 		}
 	}
 	
-	// sometimes album info contains weird image urls
-	// (low resolution images from amazon, cdbaby etc),
-	// which we won't store.
 	protected String validateUrl(String url) {
 		String result = null;
 		
-		if (url != null && url.indexOf(IMAGE_HOST) > 0) {
+		if (url != null) {
 			result = url;
 		}
 		
