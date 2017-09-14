@@ -74,7 +74,7 @@ public class AlbumInfoHandler extends DefaultHandler {
 	protected String validateUrl(String url) {
 		String result = null;
 		
-		if (url != null) {
+		if (url != null && !"".equals(url)) {
 			result = url;
 		}
 		
