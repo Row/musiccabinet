@@ -67,7 +67,7 @@ public class UserLovedTracksService extends SearchIndexUpdateService {
 		userLovedTracksDao.createLovedTracks(userLovedTracks);
 
 		for (UserStarredTrack ust : userLovedTracksDao.getStarredButNotLovedTracks()) {
-			trackLoveClient.love(ust.getStarredTrack(), ust.getLastFmUser());
+			// trackLoveClient.love(ust.getStarredTrack(), ust.getLastFmUser());
 		}
 	}
 
